@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<header>
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+      <a class="navbar-brand">HCMS</a>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" routerLinkActive="Active" [routerLinkActiveOptions]="{exact:true}"
+            routerLink=""><span class="glyphicon glyphicon-home "></span></a></li>
+        <ng-container *ngIf="loginlink">
+          <li class="nav-item"><a class="nav-link" routerLinkActive="Active" routerLink="/adminlogin">Admin Login</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" routerLinkActive="Active" routerLink="/customerlogin">Customer
+              Login</a></li>
+          <li class="nav-item"><a class="nav-link" routerLinkActive="Active" routerLink="/customerregistration">Customer
+              Registration</a></li>
+        </ng-container>
+     </ul>
+      <ul class="navbar-nav ml-auto">
+        <ng-container *ngIf="!loginlink">
+          <li class="nav-item"><a class="nav-link" routerLinkActive="Active" routerLink="/customerlogin"><span
+                class="glyphicon glyphicon-log-out"></span></a></li>
+        </ng-container>
+        <ng-container *ngIf="loginlink">
+          <li class="nav-item"><a class="nav-link" routerLinkActive="Active" routerLink="/aboutus">About Us</a></li>
+        </ng-container>
+      </ul>
+    </nav>
+  </div>

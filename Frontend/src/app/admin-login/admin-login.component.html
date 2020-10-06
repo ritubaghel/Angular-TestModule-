@@ -1,0 +1,28 @@
+<h1 align="center">admin Login</h1>
+<div class="row justify-content-center">
+    <div class="col-sm-4 text-left bg-white rounded shadow py-13">
+        <p class="text-danger"><small>{{msg}}</small></p>
+
+        <form (ngSubmit)="loginAdmin()" #AdminloginForm="ngForm" >
+            <div class="form-group">
+                <label for="adminName">Admin Name<sup>*</sup></label>
+                <input type="text" [(ngModel)]="admin.adminName" class="form-control" name=adminName
+                    placeholder="Enter admin name" required ngModel #adminName="ngModel">
+                <small class="text-danger" *ngIf="!adminName.valid && adminName.touched">Enter the admin Name.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="adminPassword">Password<sup>*</sup></label>
+                <input type="password" [(ngModel)]="admin.adminPassword" class="form-control"
+                    name=adminPassword placeholder="Enter Password" required ngModel #password="ngModel">
+                <small class="text-danger" *ngIf="!password.valid && password.touched">Enter the Password</small>
+            </div>
+            
+            <button type="submit" class="btn btn-success" [disabled]="!AdminloginForm.valid">Login</button>
+            
+            <small id="registerHelp" class="form-text ">
+                
+            </small>
+        </form>
+    </div>
+</div>

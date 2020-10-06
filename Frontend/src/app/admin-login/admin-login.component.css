@@ -1,0 +1,8 @@
+input.ng-invalid.ng-touched,select.ng-invalid.ng-touched{
+    border: 1px solid red;
+    box-shadow: 0 0 13px inset rgba(248, 3, 3, 0.274);
+}
+input.ng-valid.ng-touched,select.ng-valid.ng-touched{
+    border: 1px solid rgb(11, 75, 9);
+    box-shadow: 0 0 13px inset rgba(5, 88, 16, 0.712);
+}

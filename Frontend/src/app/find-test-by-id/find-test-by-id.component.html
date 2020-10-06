@@ -1,0 +1,33 @@
+<h1 align="center">Search Test by Id</h1>
+<div class="row justify-content-center">
+    <div class="col-sm-6 text-left bg-white rounded shadow py-13">
+     <p class="text-danger" *ngIf="foundTest==null"><small>{{msg}}</small></p>
+<form #formdata="ngForm" (ngSubmit)="formdata.valid && findTestById(formdata)">
+    <div>
+         <label>Test Id</label><br>
+         <input type="number" name="testId" class="form-control" pattern="[1-9]{1,}" required ngModel #testId="ngModel">
+         <small class="text-danger" *ngIf="!testId.valid && testId.touched && testId.errors">Valid test Id is required</small>
+
+    </div>
+    <br>
+    <input type="submit" value="Find Test">   
+</form>
+<br>
+<div id="foundTest" *ngIf="foundTest!=null">
+     <p class="text-success">Test found!!</p>
+    <table class="table table-striped">
+         <tr>
+              <th>TestId</th>
+              <th>TestName</th>
+              <th>TestPrice</th>
+         </tr>
+         <tr>
+              <td>{{foundTest.testId}}</td>
+              <td>{{foundTest.testName}}</td>
+              <td>{{foundTest.testPrice}}</td>
+
+         </tr>
+    </table>
+</div>
+</div>
+</div>

@@ -1,0 +1,29 @@
+<h1 align="center">Customer Login</h1>
+<div class="row justify-content-center">
+    <div class="col-sm-4 text-left bg-white rounded shadow py-13">
+        <p class="text-danger"><small>{{msg}}</small></p>
+
+        <form (ngSubmit)="loginCustomer()" #CustomerloginForm="ngForm">
+            <div class="form-group">
+                <label for="customerId">Customer Name<sup>*</sup></label>
+                <input type="text" [(ngModel)]="customer.customerName" class="form-control" name=customerId
+                    placeholder="Enter Customer name" required ngModel #custId="ngModel">
+                <small class="text-danger" *ngIf="!custId.valid && custId.touched">Enter the customer Name.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="customerPassword">Password<sup>*</sup></label>
+                <input type="password" [(ngModel)]="customer.customerPassword" class="form-control"
+                    name=customerPassword placeholder="Enter Password" required ngModel #password="ngModel">
+                <small class="text-danger" *ngIf="!password.valid && password.touched">Enter the Password</small>
+            </div>
+            
+            <button type="submit" class="btn btn-success" [disabled]="!CustomerloginForm.valid">Login</button>
+            <button type="submit" class="btn btn-primary float-right" aria-describedby="registerHelp"
+                routerLinkActive="Active" routerLink="/customerregistration">Register</button>
+            <small id="registerHelp" class="form-text ">
+                <p class="text-right">New Customer?</p>
+            </small>
+        </form>
+    </div>
+</div>

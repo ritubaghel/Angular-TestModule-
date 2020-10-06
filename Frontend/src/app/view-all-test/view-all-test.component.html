@@ -1,0 +1,23 @@
+<h1 align="center">View All Test</h1>
+<div class="row justify-content-center">
+    <div class="col-sm-8 text-left bg-white rounded shadow py-13">
+<table class="table table-striped">
+    <thead class="thead-dark">
+  <tr>
+    <th>TestId</th>
+    <th>TestName</th>
+    <th>TestPrice</th>   
+    <th>Action</th>
+  </tr>
+</thead>
+  <tr *ngFor="let test of allTest">
+    <td>{{test.testId}}</td>
+    <td>{{test.testName}}</td>
+    <td>{{test.testPrice}}</td>
+      <td>
+        <button (click)="confirmDelete(test.testId)" type="button" class="btn btn-danger">Delete</button>
+    </td>
+  </tr>
+</table>
+</div>
+</div>

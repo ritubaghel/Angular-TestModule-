@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-sm-10 text-left bg-white rounded shadow py-13">
+        <div class="p-3 mb-2 bg-success text-white">
+            <h1>Welcome, {{adminname}}</h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Add Diagnostic Center</h3>
+                        <p class="card-text">Add new Diagnostic Center to Existing List</p>
+                        <a routerLinkActive="Active" routerLink="/adddiagnosticcenter" class="btn btn-primary">Add</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Add Test</h3>
+                        <p class="card-text">Add new Test</p>
+                        <br>
+                        <a routerLinkActive="Active" routerLink="/addtest" class="btn btn-primary">Add</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Remove Diagnostic Center</h3>
+                        <p class="card-text">Remove Diagnostic Center from List</p>
+                        <a routerLinkActive="Active" routerLink="/removediagnosticcenter" class="btn btn-danger">Apply
+                            for Appointment</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Remove Test</h3>
+                        <p class="card-text">Remove Test from List</p>
+                        <br>
+                        <a routerLinkActive="Active" routerLink="/viewAllTest" class="btn btn-danger">Remove
+                            Test</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Approve Appointment Status</h3>
+                        <p class="card-text">Approve appointments</p>
+                        <a routerLinkActive="Active" routerLink="/approveappointments" class="btn btn-primary">Apply for
+                            Appointment</a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Search Test By Id</h3>
+                        <p class="card-text">Search test By Id</p>
+                        <a routerLinkActive="Active" routerLink="/searchtestbyid" class="btn btn-primary">Search Test</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>

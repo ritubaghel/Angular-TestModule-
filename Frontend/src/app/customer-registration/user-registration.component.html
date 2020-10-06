@@ -1,0 +1,64 @@
+<div class="row justify-content-center"><h1>Customer Registration</h1></div>
+<div class="row justify-content-center">
+  <div class="col-sm-4 text-left bg-white rounded shadow py-3">
+    <p class="text-danger"><small>{{msg}}</small></p>
+    <form #registrationForm="ngForm">
+
+     <div class="form-group">
+        <label for="customerName">Customer Name<sup>*</sup></label>
+        <input type="text" [(ngModel)]="customer.customerName" class="form-control" id="customerName"
+          name="customerName" ngModel placeholder="Enter Customer Name" required #uname="ngModel"
+          pattern="[A-Z]{1}[[A-Za-z ]{1,}]*">
+        <small class="text-danger" *ngIf="!uname.valid && uname.touched && uname.errors">Name is required, first letter should be capital.</small>
+      </div>
+
+      <div class="form-group">
+        <label for="customerPassword">Password<sup>*</sup></label>
+        <input type="password" [(ngModel)]="customer.customerPassword" class="form-control" id="customerPassword"
+          name="customerPassword" ngModel placeholder="Enter Password" required #password="ngModel"
+          pattern="(?=.*\d)(?=.*[!@#$%^&*()_{}])(?=.*[A-Za-z]).{8,14}">
+        <small class="text-danger" *ngIf="!password.valid && password.touched">Must contain one number,one alphabet,one
+          special character and size should be of 8-14 characters </small>
+      </div>
+
+      <div class="form-group">
+        <label for="customerEmail">Email Address<sup>*</sup></label>
+        <input type="text" [(ngModel)]="customer.customerEmail" class="form-control" id="customerEmail"
+          name="customerEmail" ngModel placeholder="Enter Email" required pattern="[a-zA-Z][a-z0-9.]+@[a-z.]+\.[a-z]{2,}$" #email="ngModel">
+        <small class="text-danger" *ngIf="!email.valid && email.touched">Please enter correct email id</small>
+      </div>
+
+      <div class="form-group">
+        <label for="customerPhoneNumber">Contact number<sup>*</sup></label>
+        <input type="text" [(ngModel)]="customer.customerPhoneNumber" class="form-control" id="customerPhoneNumber"
+          name="customerPhoneNumber" ngModel placeholder="Enter Contact number" required pattern="[9]{1}[0-9]{9}"
+          #contactno="ngModel">
+        <small class="text-danger" *ngIf="!contactno.valid && contactno.touched">Please enter 10 digit Phone Number, It should start with 9</small>
+     </div>
+
+      <div class="form-group">
+        <label for="customerAge">Age<sup>*</sup></label>
+        <input type="number" [(ngModel)]="customer.customerAge" class="form-control" id="age" name="age"  pattern="[1-9]{1}[0-9]{1}"
+          ngModel placeholder="Enter Age" required #age="ngModel">
+        <small class="text-danger" *ngIf="!age.valid && age.touched">Please select age</small>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Select Gender<sup>*</sup></label>
+        <select class="form-control" id="gender"  [(ngModel)]="customer.customerGender" name="gender" ngModel required>
+          <option value="undefined" disabled>Select gender</option>  
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!registrationForm.valid"
+        (click)="addCustomer()">Register</button>
+      <button type="submit" class="btn btn-warning float-right" aria-describedby="registerHelp"
+        routerLinkActive="Active" routerLink="/customerlogin">Login</button>
+      <small id="registerHelp" class="form-text ">
+        <p class="text-right">Existing Customer?</p>
+      </small>
+    </form>
+  </div>
+</div>
